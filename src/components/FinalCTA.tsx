@@ -13,7 +13,7 @@ export default function FinalCTA() {
       {/* Background image layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/forest-trail.png"
+          src="/images/forest-aerial.png"
           alt=""
           fill
           className="object-cover opacity-10"

@@ -47,13 +47,13 @@ const teamBlocks = [
     title: "Forward-Deployed Engineers",
     description:
       "We embed with your team. Our engineers work alongside yours during implementation — not from a remote office sending deliverables.",
-    image: "/images/team-working.png",
+    image: "/images/engineers-working.png",
   },
   {
     title: "Battle-Tested Methodology",
     description:
       "Years of hard-earned experience across dozens of industries. We've seen what works, what fails, and exactly how to avoid the common pitfalls.",
-    image: "/images/challenge-person.png",
+    image: "/images/handshake.png",
   },
 ];
 
