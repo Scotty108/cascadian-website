@@ -9,7 +9,7 @@ const doubled = [...platforms, ...platforms];
 
 export default function TrustStrip() {
   return (
-    <section className="section-secondary py-12 md:py-16">
+    <section className="section-lifted py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="text-xs font-medium tracking-[0.2em] uppercase text-theme-faint text-center mb-8">

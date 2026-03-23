@@ -67,7 +67,7 @@ export default function Process() {
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.7], ["0%", "100%"]);
 
   return (
-    <section id="process" ref={sectionRef} className="py-24 md:py-40 section-secondary overflow-hidden">
+    <section id="process" ref={sectionRef} className="py-24 md:py-40 section-secondary relative bg-dot-grid overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>

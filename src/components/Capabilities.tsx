@@ -127,7 +127,7 @@ const capabilities = [
 
 export default function Capabilities() {
   return (
-    <section id="services" className="py-24 md:py-32" style={{ background: "linear-gradient(180deg, var(--color-surface-secondary) 0%, var(--color-surface-primary) 100%)" }}>
+    <section id="services" className="py-24 md:py-32" style={{ background: "linear-gradient(180deg, var(--color-ink-800) 0%, var(--color-surface-primary) 100%)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>

@@ -86,7 +86,7 @@ const differentiators = [
 
 export default function WhyCascadian() {
   return (
-    <section id="why-cascadian" className="section-secondary py-24 md:py-32">
+    <section id="why-cascadian" className="section-lifted py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="text-sm font-medium tracking-[0.2em] uppercase text-accent-400 mb-4">

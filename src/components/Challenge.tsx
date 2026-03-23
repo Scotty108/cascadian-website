@@ -7,7 +7,7 @@ const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export default function Challenge() {
   return (
-    <section className="section-primary py-24 md:py-32">
+    <section className="section-accent-dark relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
           {/* Left side — text content */}

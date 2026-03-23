@@ -9,7 +9,7 @@ const words = heading.split(" ");
 
 export default function FinalCTA() {
   return (
-    <section id="cta" className="section-secondary py-24 md:py-32 relative overflow-hidden">
+    <section id="cta" className="section-accent-dark py-24 md:py-32 relative overflow-hidden">
       {/* Background image layer */}
       <div className="absolute inset-0 z-0">
         <Image

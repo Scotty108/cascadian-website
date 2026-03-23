@@ -93,7 +93,7 @@ body {
               inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Theme-aware section backgrounds */
+/* Theme-aware section backgrounds — with real visual contrast */
 .section-primary {
   background-color: var(--color-surface-primary);
 }
@@ -104,6 +104,41 @@ body {
 
 .section-elevated {
   background-color: var(--color-surface-elevated);
+}
+
+/* Distinctly lighter dark surface — visible contrast */
+.section-lifted {
+  background-color: var(--color-ink-800);
+}
+
+:root[data-theme="light"] .section-lifted {
+  background-color: #f0f0f2;
+}
+
+/* Accent-tinted dark section — adds color warmth */
+.section-accent-dark {
+  background: linear-gradient(135deg, #091a17 0%, var(--color-surface-primary) 60%, #0a1520 100%);
+}
+
+:root[data-theme="light"] .section-accent-dark {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f8f8fa 60%, #ecfeff 100%);
+}
+
+/* Full accent band — high contrast break */
+.section-accent-band {
+  background-color: var(--color-accent-500);
+  color: var(--color-ink-950);
+}
+
+/* Subtle dot grid overlay — reusable texture */
+.bg-dot-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--color-ink-600) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 /* Theme-aware text */

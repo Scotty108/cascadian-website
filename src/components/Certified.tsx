@@ -67,7 +67,7 @@ export default function Certified() {
   const imgY2 = useTransform(scrollYProgress, [0, 1], [50, -20]);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-40 section-primary overflow-hidden">
+    <section ref={sectionRef} className="py-24 md:py-40 section-accent-dark relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal>
