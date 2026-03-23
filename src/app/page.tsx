@@ -1,27 +1,25 @@
-import PromoBanner from "@/components/PromoBanner";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import HowWeBuilt from "@/components/HowWeBuilt";
-import BestSeller from "@/components/BestSeller";
-import ProductCards from "@/components/ProductCards";
-import QualityCertified from "@/components/QualityCertified";
-import FAQ from "@/components/FAQ";
-import BlogPreview from "@/components/BlogPreview";
+import CaseStudies from "@/components/CaseStudies";
+import Services from "@/components/Services";
+import Team from "@/components/Team";
+import Industries from "@/components/Industries";
+import Articles from "@/components/Articles";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <PromoBanner />
       <Header />
       <main>
         <Hero />
-        <HowWeBuilt />
-        <BestSeller />
-        <ProductCards />
-        <QualityCertified />
-        <FAQ />
-        <BlogPreview />
+        <CaseStudies />
+        <Services />
+        <Team />
+        <Industries />
+        <Articles />
+        <Contact />
       </main>
       <Footer />
     </>

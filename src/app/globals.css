@@ -1,53 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* Cascadian Brand Colors */
-  --color-cascade-50: #f0f7fa;
-  --color-cascade-100: #d9eef5;
-  --color-cascade-200: #b3dded;
-  --color-cascade-300: #7cc5e0;
-  --color-cascade-400: #3da8cf;
-  --color-cascade-500: #1e8db8;
-  --color-cascade-600: #17719a;
-  --color-cascade-700: #155c7d;
-  --color-cascade-800: #164d68;
-  --color-cascade-900: #174158;
-  --color-cascade-950: #0e2a3b;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
 
-  --color-forest-50: #f2f8f0;
-  --color-forest-100: #e0efdc;
-  --color-forest-200: #c2dfba;
-  --color-forest-300: #96c88d;
-  --color-forest-400: #6aad5e;
-  --color-forest-500: #4a923f;
-  --color-forest-600: #387530;
-  --color-forest-700: #2d5c27;
-  --color-forest-800: #274a23;
-  --color-forest-900: #213d1f;
-  --color-forest-950: #0f210e;
+  --color-ink-950: #09090b;
+  --color-ink-900: #0e0e11;
+  --color-ink-800: #18181b;
+  --color-ink-700: #222225;
+  --color-ink-600: #2e2e32;
+  --color-ink-500: #45454a;
+  --color-ink-400: #6b6b73;
+  --color-ink-300: #919198;
+  --color-ink-200: #b4b4ba;
+  --color-ink-100: #d6d6da;
+  --color-ink-50: #f0f0f2;
 
-  --color-snow-50: #fafbfc;
-  --color-snow-100: #f1f5f9;
-  --color-snow-200: #e2e8f0;
-  --color-snow-300: #cbd5e1;
-  --color-snow-400: #94a3b8;
-  --color-snow-500: #64748b;
+  --color-accent-500: #00c2a8;
+  --color-accent-400: #00d4b8;
+  --color-accent-300: #33e0c8;
+  --color-accent-200: #80eddb;
+  --color-accent-100: #ccf7f0;
 
-  /* Font families */
-  --font-heading: "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --color-glow-teal: #0d9488;
+  --color-glow-emerald: #10b981;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    font-family: var(--font-body);
-    color: var(--color-cascade-950);
-    background-color: #ffffff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ink-950);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent-500);
+  color: var(--color-ink-950);
+}
+
+/* Premium transition curve */
+* {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fade in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-600 { animation-delay: 600ms; }

@@ -1,34 +1,33 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
 export const metadata: Metadata = {
-  title: "Cascadian | Pure Water, Naturally",
+  metadataBase: new URL("https://cascadian.ai"),
+  title: "Cascadian — Your Path to Agentic AI",
   description:
-    "Cascadian delivers premium whole-home water filtration systems. Clean, pure, toxin-free water for your family — backed by a lifetime warranty.",
-  keywords: [
-    "water filtration",
-    "whole home water system",
-    "reverse osmosis",
-    "water softener",
-    "clean water",
-    "Cascadian",
-  ],
+    "Cascadian is a leading AI consultancy that delivers transformation services to guide organizations into the new era of AI.",
+  icons: {
+    icon: "/images/favicon.svg",
+  },
+  openGraph: {
+    title: "Cascadian — Your Path to Agentic AI",
+    description:
+      "Cascadian is a leading AI consultancy that delivers transformation services to guide organizations into the new era of AI.",
+    url: "https://cascadian.ai",
+    siteName: "Cascadian",
+    images: [{ url: "/images/og-image.svg", width: 1200, height: 630 }],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="antialiased">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
