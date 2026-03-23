@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerParent, StaggerChild } from "./StaggerChildren";
 import SpotlightCard from "./SpotlightCard";
@@ -126,7 +127,7 @@ const capabilities = [
 
 export default function Capabilities() {
   return (
-    <section id="services" className="py-24 md:py-32 section-primary">
+    <section id="services" className="py-24 md:py-32" style={{ background: "linear-gradient(180deg, var(--color-surface-secondary) 0%, var(--color-surface-primary) 100%)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
@@ -140,13 +141,26 @@ export default function Capabilities() {
           </div>
         </ScrollReveal>
 
+        {/* Decorative image strip */}
+        <ScrollReveal>
+          <div className="relative w-full h-32 md:h-40 rounded-xl overflow-hidden mb-12">
+            <Image
+              src="/images/team-working.png"
+              alt="Team collaborating"
+              fill
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface-secondary)] via-transparent to-[var(--color-surface-secondary)]" />
+          </div>
+        </ScrollReveal>
+
         {/* Capability cards — 2-column grid */}
         <StaggerParent className="grid md:grid-cols-2 gap-5">
           {capabilities.map((capability) => (
             <StaggerChild key={capability.title}>
               <motion.div
                 whileHover={{ y: -4 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
               >
                 <SpotlightCard className="group border border-theme h-full">
                   <div className="p-8">

@@ -4,6 +4,7 @@ import TrustStrip from "@/components/TrustStrip";
 import Challenge from "@/components/Challenge";
 import Process from "@/components/Process";
 import Capabilities from "@/components/Capabilities";
+import Certified from "@/components/Certified";
 import WhyCascadian from "@/components/WhyCascadian";
 import AIOperatingSystem from "@/components/AIOperatingSystem";
 import FinalCTA from "@/components/FinalCTA";
@@ -19,6 +20,7 @@ export default function Home() {
         <Challenge />
         <Process />
         <Capabilities />
+        <Certified />
         <WhyCascadian />
         <AIOperatingSystem />
         <FinalCTA />

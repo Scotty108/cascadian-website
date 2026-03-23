@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const heading = "The first step is a conversation";
@@ -8,8 +9,19 @@ const words = heading.split(" ");
 
 export default function FinalCTA() {
   return (
-    <section id="cta" className="section-secondary py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <section id="cta" className="section-secondary py-24 md:py-32 relative overflow-hidden">
+      {/* Background image layer */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/forest-trail.png"
+          alt=""
+          fill
+          className="object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface-secondary)] via-[var(--color-surface-secondary)]/80 to-[var(--color-surface-secondary)]/90" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <ScrollReveal>
           {/* Staggered word entrance heading */}
           <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tighter text-theme-primary mb-6">
@@ -23,7 +35,7 @@ export default function FinalCTA() {
                 transition={{
                   duration: 0.5,
                   delay: i * 0.08,
-                  ease: [0.16, 1, 0.3, 1],
+                  ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
                 }}
               >
                 {word}
