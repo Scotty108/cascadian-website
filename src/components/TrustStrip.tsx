@@ -1,8 +1,11 @@
 "use client";
 
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const platforms = ["Anthropic", "OpenAI", "Microsoft", "Google", "Nvidia", "N8N"];
+// Duplicate for seamless loop
+const doubled = [...platforms, ...platforms];
 
 export default function TrustStrip() {
   return (
@@ -12,17 +15,34 @@ export default function TrustStrip() {
           <p className="text-xs font-medium tracking-[0.2em] uppercase text-theme-faint text-center mb-8">
             Platforms We Support
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {platforms.map((name) => (
+        </ScrollReveal>
+
+        {/* Marquee container */}
+        <div
+          className="overflow-hidden group"
+        >
+          <motion.div
+            className="flex gap-12 whitespace-nowrap"
+            animate={{ x: [0, "-50%"] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                ease: "linear",
+                duration: 25,
+              },
+            }}
+            style={{ willChange: "transform" }}
+          >
+            {doubled.map((name, i) => (
               <span
-                key={name}
+                key={`${name}-${i}`}
                 className="text-sm md:text-base font-medium text-theme-muted whitespace-nowrap"
               >
                 {name}
               </span>
             ))}
-          </div>
-        </ScrollReveal>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

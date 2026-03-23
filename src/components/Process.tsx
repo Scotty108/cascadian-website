@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerParent, StaggerChild } from "./StaggerChildren";
 
@@ -52,9 +53,16 @@ export default function Process() {
 
         {/* Steps with connecting line */}
         <StaggerParent className="relative ml-4 md:ml-8">
-          {/* Vertical connecting line */}
-          <div
-            className="absolute left-0 top-0 bottom-0 w-px bg-accent-500/20"
+          {/* Animated vertical connecting line */}
+          <motion.div
+            className="absolute left-0 top-0 bottom-0 w-px bg-accent-500/20 origin-top"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              duration: 1.2,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             aria-hidden="true"
           />
 
@@ -65,9 +73,17 @@ export default function Process() {
                 index < steps.length - 1 ? "pb-12 md:pb-16" : ""
               }`}
             >
-              {/* Accent dot on the line */}
-              <div
-                className="absolute left-0 top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-accent-500"
+              {/* Accent dot on the line with pulse + glow */}
+              <motion.div
+                className="absolute left-0 top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-accent-500 shadow-[0_0_8px_rgba(0,194,168,0.4)]"
+                initial={{ scale: 1 }}
+                whileInView={{ scale: [1, 1.5, 1] }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.1 + index * 0.12,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 aria-hidden="true"
               />
 

@@ -125,3 +125,19 @@ body {
 .card-theme:hover {
   border-color: var(--color-surface-border-hover);
 }
+
+/* Reduced motion — accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Marquee pause on hover */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}

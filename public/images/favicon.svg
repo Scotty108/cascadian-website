@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#050505"/>
+  <rect width="32" height="32" rx="8" fill="#09090b"/>
   <defs>
     <linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00c2a8"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0d9488"/>
     </linearGradient>
   </defs>
   <path d="M16 5 L26 22 L23 22 L16 10 L9 22 L6 22 Z" fill="url(#fg)"/>

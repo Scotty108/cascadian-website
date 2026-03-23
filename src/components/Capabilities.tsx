@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerParent, StaggerChild } from "./StaggerChildren";
 
@@ -142,13 +143,15 @@ export default function Capabilities() {
         <StaggerParent className="grid md:grid-cols-2 gap-5">
           {capabilities.map((capability) => (
             <StaggerChild key={capability.title}>
-              <div
-                className="card-theme border border-theme rounded-2xl p-8 transition-all duration-500"
+              <motion.div
+                className="group card-theme border border-theme rounded-2xl p-8 transition-all duration-500"
                 style={{
                   transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent-500/10 text-accent-400 mb-5">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent-500/10 text-accent-400 mb-5 group-hover:bg-accent-500/20 group-hover:scale-110 transition-all duration-300">
                   {capability.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-theme-primary mb-3">
@@ -157,7 +160,7 @@ export default function Capabilities() {
                 <p className="text-sm text-theme-muted leading-relaxed">
                   {capability.description}
                 </p>
-              </div>
+              </motion.div>
             </StaggerChild>
           ))}
         </StaggerParent>
