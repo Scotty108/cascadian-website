@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import CaseStudies from "@/components/CaseStudies";
-import Services from "@/components/Services";
-import Team from "@/components/Team";
-import Industries from "@/components/Industries";
-import Articles from "@/components/Articles";
-import Contact from "@/components/Contact";
+import TrustStrip from "@/components/TrustStrip";
+import Challenge from "@/components/Challenge";
+import Process from "@/components/Process";
+import Capabilities from "@/components/Capabilities";
+import WhyCascadian from "@/components/WhyCascadian";
+import AIOperatingSystem from "@/components/AIOperatingSystem";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,12 +15,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <CaseStudies />
-        <Services />
-        <Team />
-        <Industries />
-        <Articles />
-        <Contact />
+        <TrustStrip />
+        <Challenge />
+        <Process />
+        <Capabilities />
+        <WhyCascadian />
+        <AIOperatingSystem />
+        <FinalCTA />
       </main>
       <Footer />
     </>

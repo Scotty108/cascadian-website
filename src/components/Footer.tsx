@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollReveal from "./ScrollReveal";
+
 const footerLinks = {
   company: [
     { label: "Home", href: "/" },
@@ -46,113 +50,115 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-950 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <a href="/" className="inline-block mb-5">
-              <span className="text-2xl font-display font-semibold tracking-tight text-white">
-                Cascadian
-              </span>
-            </a>
-            <p className="text-sm text-ink-400 leading-relaxed mb-6">
-              A global AI consultancy delivering transformation services to
-              guide organizations into the new era of AI.
-            </p>
-            {/* Social links */}
-            <div className="flex items-center gap-3">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white/5 text-ink-400 hover:bg-white/10 hover:text-white transition-all duration-200"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Company links */}
-          <div>
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-4">
-              Company
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-ink-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal links */}
-          <div>
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-4">
-              Legal
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-ink-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Offices */}
-          <div>
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-4">
-              Offices
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm font-medium text-ink-200">Seattle, WA</p>
-                <p className="text-xs text-ink-500">
-                  400 Broad St, Suite 200
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-ink-200">Portland, OR</p>
-                <p className="text-xs text-ink-500">
-                  1120 NW Couch St, Suite 320
-                </p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <a
-                href="mailto:hello@cascadian.ai"
-                className="text-sm text-accent-400 hover:text-accent-300 transition-colors"
-              >
-                hello@cascadian.ai
+    <footer className="section-primary border-t border-theme">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {/* Brand */}
+            <div className="lg:col-span-1">
+              <a href="/" className="inline-block mb-5">
+                <span className="text-2xl font-display font-semibold tracking-tight text-theme-primary">
+                  Cascadian
+                </span>
               </a>
+              <p className="text-sm text-theme-muted leading-relaxed mb-6">
+                A global AI consultancy delivering transformation services to
+                guide organizations into the new era of AI.
+              </p>
+              {/* Social links */}
+              <div className="flex items-center gap-3">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="w-9 h-9 flex items-center justify-center rounded-full bg-white/5 text-theme-muted hover:bg-white/10 hover:text-theme-primary transition-all duration-200"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Company links */}
+            <div>
+              <h3 className="text-xs font-semibold text-theme-primary uppercase tracking-wider mb-4">
+                Company
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-theme-muted hover:text-theme-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Legal links */}
+            <div>
+              <h3 className="text-xs font-semibold text-theme-primary uppercase tracking-wider mb-4">
+                Legal
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-theme-muted hover:text-theme-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Offices */}
+            <div>
+              <h3 className="text-xs font-semibold text-theme-primary uppercase tracking-wider mb-4">
+                Offices
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-medium text-theme-secondary">Seattle, WA</p>
+                  <p className="text-xs text-theme-faint">
+                    400 Broad St, Suite 200
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-theme-secondary">Portland, OR</p>
+                  <p className="text-xs text-theme-faint">
+                    1120 NW Couch St, Suite 320
+                  </p>
+                </div>
+              </div>
+              <div className="mt-6">
+                <a
+                  href="mailto:hello@cascadian.ai"
+                  className="text-sm text-accent-400 hover:text-accent-300 transition-colors"
+                >
+                  hello@cascadian.ai
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-ink-500">
-            &copy; 2026 Cascadian AI, Inc. All rights reserved.
-          </p>
-          <p className="text-xs text-ink-600">
-            Built with purpose in the Pacific Northwest.
-          </p>
+          {/* Bottom bar */}
+          <div className="mt-16 pt-8 border-t border-theme flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-theme-faint">
+              &copy; 2026 Cascadian AI, Inc. All rights reserved.
+            </p>
+            <p className="text-xs text-ink-600">
+              Built with purpose in the Pacific Northwest.
+            </p>
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </footer>
   );
 }
