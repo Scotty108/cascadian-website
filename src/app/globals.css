@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cascadian Brand Colors */
+  --color-cascade-50: #f0f7fa;
+  --color-cascade-100: #d9eef5;
+  --color-cascade-200: #b3dded;
+  --color-cascade-300: #7cc5e0;
+  --color-cascade-400: #3da8cf;
+  --color-cascade-500: #1e8db8;
+  --color-cascade-600: #17719a;
+  --color-cascade-700: #155c7d;
+  --color-cascade-800: #164d68;
+  --color-cascade-900: #174158;
+  --color-cascade-950: #0e2a3b;
+
+  --color-forest-50: #f2f8f0;
+  --color-forest-100: #e0efdc;
+  --color-forest-200: #c2dfba;
+  --color-forest-300: #96c88d;
+  --color-forest-400: #6aad5e;
+  --color-forest-500: #4a923f;
+  --color-forest-600: #387530;
+  --color-forest-700: #2d5c27;
+  --color-forest-800: #274a23;
+  --color-forest-900: #213d1f;
+  --color-forest-950: #0f210e;
+
+  --color-snow-50: #fafbfc;
+  --color-snow-100: #f1f5f9;
+  --color-snow-200: #e2e8f0;
+  --color-snow-300: #cbd5e1;
+  --color-snow-400: #94a3b8;
+  --color-snow-500: #64748b;
+
+  /* Font families */
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-cascade-950);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
