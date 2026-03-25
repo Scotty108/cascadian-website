@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
@@ -8,16 +9,25 @@ const heading = "The first step is a conversation";
 const words = heading.split(" ");
 
 export default function FinalCTA() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+
   return (
-    <section id="cta" className="section-accent-dark py-24 md:py-32 relative overflow-hidden">
+    <section ref={sectionRef} id="cta" className="section-accent-dark py-24 md:py-32 relative overflow-hidden">
       {/* Background image layer */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/forest-aerial.png"
-          alt=""
-          fill
-          className="object-cover opacity-10"
-        />
+        <motion.div className="absolute inset-0" style={{ y: bgY }}>
+          <Image
+            src="/images/forest-aerial.png"
+            alt=""
+            fill
+            className="object-cover opacity-10 scale-[1.15]"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface-secondary)] via-[var(--color-surface-secondary)]/80 to-[var(--color-surface-secondary)]/90" />
       </div>
 

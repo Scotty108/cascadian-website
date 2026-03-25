@@ -78,7 +78,7 @@ export default function FloatingNodes() {
               transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 200, damping: 20 }}
             >
               <div className="w-14 h-14 rounded-2xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/20">
-                <img src="/images/logo.svg" alt="" className="w-9 h-9 brightness-0 invert" />
+                <img src="/images/logo-icon.png" alt="" className="w-9 h-9 brightness-0 invert" />
               </div>
               {/* Pulse ring */}
               <motion.div

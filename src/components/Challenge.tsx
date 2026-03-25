@@ -1,13 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 
 const ease = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export default function Challenge() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   return (
-    <section className="section-accent-dark relative py-24 md:py-32">
+    <section ref={sectionRef} className="section-accent-dark relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
           {/* Left side — text content */}
@@ -67,12 +75,14 @@ export default function Challenge() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease, delay: 0.2 }}
           >
-            <Image
-              src="/images/challenge-person.png"
-              alt="Professional analyzing AI data"
-              fill
-              className="object-cover"
-            />
+            <motion.div className="absolute inset-0" style={{ y: imgY }}>
+              <Image
+                src="/images/challenge-person.png"
+                alt="Professional analyzing AI data"
+                fill
+                className="object-cover scale-[1.15]"
+              />
+            </motion.div>
             {/* Gradient overlay fading to background */}
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-transparent" />
           </motion.div>

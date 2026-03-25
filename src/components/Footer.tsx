@@ -57,9 +57,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="lg:col-span-1">
               <a href="/" className="inline-block mb-5">
-                <span className="text-2xl font-display font-semibold tracking-tight text-theme-primary">
-                  Cascadian
-                </span>
+                <img src="/images/logo-full.png" alt="Cascadian" className="h-7 logo-themed" />
               </a>
               <p className="text-sm text-theme-muted leading-relaxed mb-6">
                 A global AI consultancy delivering transformation services to

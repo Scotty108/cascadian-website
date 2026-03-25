@@ -170,7 +170,7 @@ export default function AIOperatingSystem() {
                     {/* Center hub */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                       <div className="w-14 h-14 rounded-2xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/20">
-                        <img src="/images/logo.svg" alt="Cascadian" className="w-9 h-9 brightness-0 invert" />
+                        <img src="/images/logo-icon.png" alt="Cascadian" className="w-9 h-9 brightness-0 invert" />
                       </div>
                       <motion.div
                         className="absolute inset-0 rounded-2xl border border-accent-500/30"

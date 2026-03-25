@@ -18,14 +18,14 @@
   --color-ink-100: #d6d6da;
   --color-ink-50: #f0f0f2;
 
-  --color-accent-500: #00c2a8;
-  --color-accent-400: #00d4b8;
-  --color-accent-300: #33e0c8;
-  --color-accent-200: #80eddb;
-  --color-accent-100: #ccf7f0;
+  --color-accent-500: #00d1f9;
+  --color-accent-400: #33dafa;
+  --color-accent-300: #66e3fb;
+  --color-accent-200: #99ecfd;
+  --color-accent-100: #ccf6fe;
 
-  --color-glow-teal: #0d9488;
-  --color-glow-emerald: #10b981;
+  --color-glow-teal: #0891b2;
+  --color-glow-emerald: #06b6d4;
 
   /* Surface tokens — overridden by light theme */
   --color-surface-primary: #09090b;
@@ -117,11 +117,11 @@ body {
 
 /* Accent-tinted dark section — adds color warmth */
 .section-accent-dark {
-  background: linear-gradient(135deg, #091a17 0%, var(--color-surface-primary) 60%, #0a1520 100%);
+  background: linear-gradient(135deg, #091520 0%, var(--color-surface-primary) 60%, #0a1520 100%);
 }
 
 :root[data-theme="light"] .section-accent-dark {
-  background: linear-gradient(135deg, #ecfdf5 0%, #f8f8fa 60%, #ecfeff 100%);
+  background: linear-gradient(135deg, #ecfeff 0%, #f8f8fa 60%, #eff6ff 100%);
 }
 
 /* Full accent band — high contrast break */
@@ -159,6 +159,16 @@ body {
 
 .card-theme:hover {
   border-color: var(--color-surface-border-hover);
+}
+
+/* Logo inversion — dark by default, normal in light */
+.logo-themed {
+  filter: invert(1);
+  transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="light"] .logo-themed {
+  filter: invert(0);
 }
 
 /* Reduced motion — accessibility */

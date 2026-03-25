@@ -32,10 +32,8 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 shrink-0 group">
-            <img src="/images/logo.svg" alt="" className="w-7 h-7" />
-            <span className="text-xl font-display font-semibold tracking-tight text-theme-primary">
-              Cascadian
-            </span>
+            <img src="/images/logo-icon.png" alt="" className="w-7 h-7 logo-themed" />
+            <img src="/images/logo-text.png" alt="Cascadian" className="h-5 logo-themed" />
           </a>
 
           {/* Desktop Nav */}

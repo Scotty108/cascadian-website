@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerParent, StaggerChild } from "./StaggerChildren";
@@ -85,8 +86,15 @@ const differentiators = [
 ];
 
 export default function WhyCascadian() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+
   return (
-    <section id="why-cascadian" className="section-lifted py-24 md:py-32">
+    <section ref={sectionRef} id="why-cascadian" className="section-lifted py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <ScrollReveal>
           <p className="text-sm font-medium tracking-[0.2em] uppercase text-accent-400 mb-4">
@@ -101,12 +109,14 @@ export default function WhyCascadian() {
         {/* Atmospheric landscape image */}
         <ScrollReveal delay={0.1}>
           <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 md:mb-20">
-            <Image
-              src="/images/pnw-landscape.png"
-              alt="Pacific Northwest landscape"
-              fill
-              className="object-cover"
-            />
+            <motion.div className="absolute inset-0" style={{ y: imgY }}>
+              <Image
+                src="/images/pnw-landscape.png"
+                alt="Pacific Northwest landscape"
+                fill
+                className="object-cover scale-[1.15]"
+              />
+            </motion.div>
             {/* Gradient overlay fading to section background */}
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent" />
           </div>

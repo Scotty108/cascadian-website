@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { StaggerParent, StaggerChild } from "./StaggerChildren";
@@ -126,8 +127,15 @@ const capabilities = [
 ];
 
 export default function Capabilities() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+
   return (
-    <section id="services" className="py-24 md:py-32" style={{ background: "linear-gradient(180deg, var(--color-ink-800) 0%, var(--color-surface-primary) 100%)" }}>
+    <section ref={sectionRef} id="services" className="py-24 md:py-32 section-secondary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
@@ -144,12 +152,14 @@ export default function Capabilities() {
         {/* Decorative image strip */}
         <ScrollReveal>
           <div className="relative w-full h-32 md:h-40 rounded-xl overflow-hidden mb-12">
-            <Image
-              src="/images/team-working.png"
-              alt="Team collaborating"
-              fill
-              className="object-cover object-center"
-            />
+            <motion.div className="absolute inset-0" style={{ y: imgY }}>
+              <Image
+                src="/images/team-working.png"
+                alt="Team collaborating"
+                fill
+                className="object-cover object-center scale-[1.2]"
+              />
+            </motion.div>
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface-secondary)] via-transparent to-[var(--color-surface-secondary)]" />
           </div>
         </ScrollReveal>
